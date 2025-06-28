@@ -6,9 +6,8 @@ import 'package:pragma_cats_breeds/domain/usecases/search_cat_breed.dart';
 import 'package:pragma_cats_breeds/presentation/pages/cat_breed_page.dart';
 
 class SplashCatPage extends StatefulWidget {
-  final GetCatBreedsUseCase getCatBreeds;
-  final SearchCatBreedUseCase searchCatBreed;
-  const SplashCatPage({super.key, required this.getCatBreeds, required this.searchCatBreed});
+
+  const SplashCatPage({super.key});
 
   @override
   State<SplashCatPage> createState() => _SplashCatPageState();
@@ -20,7 +19,7 @@ class _SplashCatPageState extends State<SplashCatPage> {
     super.initState();
     Timer(const Duration(seconds: 2), (){
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => CatBreedsPage(getCatBreeds: widget.getCatBreeds, searchCatBreeds: widget.searchCatBreed))
+        MaterialPageRoute(builder: (context) => CatBreedsPage())
       );
     });
   }

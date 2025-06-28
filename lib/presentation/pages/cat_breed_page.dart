@@ -9,12 +9,9 @@ import '../../domain/entities/cat_breed.dart';
 import '../../domain/usecases/get_cat_breeds.dart';
 
 class CatBreedsPage extends StatefulWidget {
-  final GetCatBreedsUseCase getCatBreeds;
-  final SearchCatBreedUseCase searchCatBreeds;
+
   const CatBreedsPage({
     super.key,
-    required this.getCatBreeds,
-    required this.searchCatBreeds,
   });
 
   @override
@@ -27,6 +24,9 @@ class _CatBreedsPageState extends State<CatBreedsPage> {
   @override
   void initState() {
     super.initState();
+    Future.microtask(() {
+      context.read<CatBreedsBloc>().add(LoadCatBreeds());
+    });
     _searchController.addListener(() {
       setState(() {});
     });
@@ -40,11 +40,8 @@ class _CatBreedsPageState extends State<CatBreedsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => CatBreedsBloc(
-        getCatBreedsUseCase: widget.getCatBreeds,
-        searchCatBreedUseCase: widget.searchCatBreeds,
-      )..add(LoadCatBreeds()),
+    return BlocProvider.value(
+      value: BlocProvider.of<CatBreedsBloc>(context),
       child: Scaffold(
         appBar: AppBar(title: const Text('Cat Breeds')),
         body: Column(
