@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pragma_cats_breeds/domain/usecases/get_cat_breeds.dart';
 import 'package:pragma_cats_breeds/domain/usecases/search_cat_breed.dart';
-import 'package:pragma_cats_breeds/presentation/bloc/cat_breeds_event.dart';
-import 'package:pragma_cats_breeds/presentation/bloc/cat_breeds_state.dart';
+import 'package:pragma_cats_breeds/presentation/cat_breeds/bloc/cat_breeds_event.dart';
+import 'package:pragma_cats_breeds/presentation/cat_breeds/bloc/cat_breeds_state.dart';
 
 class CatBreedsBloc extends Bloc<CatBreedsEvent, CatBreedsState> {
   final GetCatBreedsUseCase getCatBreedsUseCase;
@@ -26,7 +26,7 @@ class CatBreedsBloc extends Bloc<CatBreedsEvent, CatBreedsState> {
       final breeds = await getCatBreedsUseCase();
       emit(CatBreedsLoaded(breeds));
     } catch (e) {
-      emit(CatBreedsError(e.toString()));
+      emit(CatBreedsError('Service error'));
     }
   }
 
@@ -39,7 +39,7 @@ class CatBreedsBloc extends Bloc<CatBreedsEvent, CatBreedsState> {
       final results = await searchCatBreedUseCase(event.query);
       emit(CatBreedsLoaded(results));
     } catch (e) {
-      emit(CatBreedsError('No se encuentra la búsqueda solicitada'));
+      emit(CatBreedsError('There are no matches'));
     }
   }
 
@@ -52,7 +52,7 @@ class CatBreedsBloc extends Bloc<CatBreedsEvent, CatBreedsState> {
       final breeds = await getCatBreedsUseCase();
       emit(CatBreedsLoaded(breeds));
     } catch (e) {
-      emit(CatBreedsError('Error al cargar las razas'));
+      emit(CatBreedsError('Error loading cat breeds'));
     }
   }
 }

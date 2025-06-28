@@ -9,7 +9,9 @@ final sl = GetIt.instance;
 
 void setupDependencies(){
   //Datasources
-  sl.registerLazySingleton<CatBreedRemoteDatasource>(() => CatBreedRemoteDatasource());
+  sl.registerLazySingleton<CatBreedRemoteDatasource>(
+    () => CatBreedRemoteDatasource()
+  );
 
   //Repositories
   sl.registerLazySingleton<CatBreedRepository>(

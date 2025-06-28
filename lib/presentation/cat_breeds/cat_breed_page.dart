@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pragma_cats_breeds/domain/usecases/search_cat_breed.dart';
-import 'package:pragma_cats_breeds/presentation/bloc/cat_breeds_bloc.dart';
-import 'package:pragma_cats_breeds/presentation/bloc/cat_breeds_event.dart';
-import 'package:pragma_cats_breeds/presentation/bloc/cat_breeds_state.dart';
-import 'package:pragma_cats_breeds/presentation/pages/cat_breed_detail_page.dart';
+import 'package:pragma_cats_breeds/presentation/cat_breeds/bloc/cat_breeds_bloc.dart';
+import 'package:pragma_cats_breeds/presentation/cat_breeds/bloc/cat_breeds_event.dart';
+import 'package:pragma_cats_breeds/presentation/cat_breeds/bloc/cat_breeds_state.dart';
+import 'package:pragma_cats_breeds/presentation/cat_breeds/cat_breed_detail_page.dart';
 import '../../domain/entities/cat_breed.dart';
 import '../../domain/usecases/get_cat_breeds.dart';
 

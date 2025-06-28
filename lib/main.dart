@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pragma_cats_breeds/di/injection.dart';
 import 'package:pragma_cats_breeds/domain/usecases/search_cat_breed.dart';
-import 'package:pragma_cats_breeds/presentation/bloc/cat_breeds_bloc.dart';
-import 'package:pragma_cats_breeds/presentation/pages/splash_screen_cat_page.dart';
+import 'package:pragma_cats_breeds/presentation/cat_breeds/bloc/cat_breeds_bloc.dart';
+import 'package:pragma_cats_breeds/presentation/splash/splash_screen_cat_page.dart';
 import 'data/datasources/cat_breed_remote_datasource.dart';
 import 'data/repositories/cat_breed_repository_impl.dart';
 import 'domain/usecases/get_cat_breeds.dart';
-import 'presentation/pages/cat_breed_page.dart';
+import 'presentation/cat_breeds/cat_breed_page.dart';
 
 void main() {
   setupDependencies();
