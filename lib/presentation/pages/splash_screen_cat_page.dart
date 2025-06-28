@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pragma_cats_breeds/domain/usecases/get_cat_breeds.dart';
-import 'package:pragma_cats_breeds/domain/usecases/search_cat_breed.dart';
+import 'package:pragma_cats_breeds/myapp/usecases/get_cat_breeds.dart';
+import 'package:pragma_cats_breeds/myapp/usecases/search_cat_breed.dart';
 import 'package:pragma_cats_breeds/presentation/pages/cat_breed_page.dart';
 
 class SplashCatPage extends StatefulWidget {
